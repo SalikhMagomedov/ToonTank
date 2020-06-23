@@ -17,9 +17,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = "Combat", meta = (AllowPrivateAccess = "true"))
@@ -35,4 +32,9 @@ private:
 	float ReturnDistanceToPlayer();
 
 protected:
+
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+	virtual void HandleDestruction() override;
 };
