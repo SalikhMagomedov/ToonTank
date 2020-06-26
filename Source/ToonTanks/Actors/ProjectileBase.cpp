@@ -37,10 +37,15 @@ void AProjectileBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UP
 
 	if (!MyOwner) { return; }
 
-	if (OtherActor != NULL && OtherActor != this && OtherActor != MyOwner)
+	if (OtherActor != nullptr && OtherActor != this && OtherActor != MyOwner)
 	{
 		UGameplayStatics::ApplyDamage(OtherActor, Damage, MyOwner->GetInstigatorController(), this, DamageType);
-	}
 
-	Destroy();
+		if (HitParticle)
+		{
+			UGameplayStatics::SpawnEmitterAtLocation(this, HitParticle, GetActorLocation(), FRotator::ZeroRotator);
+		}
+		
+		Destroy();
+	}
 }
