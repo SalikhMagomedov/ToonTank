@@ -35,6 +35,8 @@ private:
 	UParticleSystem* DeathParticle;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Effects", meta = (AllowPrivateAccess = "true"));
 	USoundBase* DeathSound;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Effects", meta = (AllowPrivateAccess = "true"));
+	TSubclassOf<UCameraShake> DeathShake;
 
 public:
 	// Sets default values for this pawn's properties
