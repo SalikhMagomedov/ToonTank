@@ -53,3 +53,8 @@ void APawnBase::HandleDestruction()
 {
 
 }
+
+void APawnBase::PawnDestroyed()
+{
+	HandleDestruction();
+}
